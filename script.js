@@ -1,9 +1,11 @@
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mouseover', () => {
-    card.style.boxShadow = '0 10px 30px rgba(56,189,248,0.3)';
-  });
+const tasks = document.querySelectorAll(".task input");
 
-  card.addEventListener('mouseout', () => {
-    card.style.boxShadow = 'none';
-  });
+tasks.forEach(task => {
+    task.addEventListener("change", function() {
+        if(this.checked){
+            this.parentElement.style.opacity = "0.5";
+        } else {
+            this.parentElement.style.opacity = "1";
+        }
+    });
 });
